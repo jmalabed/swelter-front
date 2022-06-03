@@ -1,10 +1,10 @@
-import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <p>Swelter</p>
+      <h1>Swelter</h1>
+      <img src="https://cdn-icons-png.flaticon.com/512/879/879247.png" />
     </div>
   );
 }
