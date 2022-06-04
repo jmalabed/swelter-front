@@ -1,6 +1,6 @@
 import "./App.css";
 import { useEffect } from "react";
-import runOneSignal from "./oneSignal";
+import runOneSignal from "./oneSignal.js";
 
 function App() {
   useEffect(() => {
