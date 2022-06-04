@@ -1,19 +1,21 @@
 import "./App.css";
 import { useEffect } from "react";
 import runOneSignal from "./oneSignalReact";
+import { Route, Routes } from "react-router-dom";
+import Welcome from "./components/Welcome";
+import Subscribe from "./components/Subscribe";
 
 function App() {
   useEffect(() => {
     runOneSignal();
-  });
+  }, []);
 
   return (
     <div className="App">
-      <h1>Swelter</h1>
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/879/879247.png"
-        alt="buoy"
-      />
+      <Routes>
+        <Route path="" element={<Welcome />} />
+        <Route path="sub" element={<Subscribe />} />
+      </Routes>
     </div>
   );
 }
