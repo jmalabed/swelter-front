@@ -1,6 +1,12 @@
 import "./App.css";
+import { useEffect } from "react";
+import { runOneSignal } from "./OneSignal";
 
 function App() {
+  useEffect(() => {
+    runOneSignal();
+  });
+
   return (
     <div className="App">
       <h1>Swelter</h1>
