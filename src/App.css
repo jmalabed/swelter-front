@@ -5,9 +5,7 @@
 }
 
 html {
-  background-size: cover;
-  background: linear-gradient(blue, white, white, white, white, white);
-  background-repeat: no-repeat;
+  background-color: lightgrey;
 }
 
 h1 {
@@ -17,4 +15,8 @@ h1 {
   font-size: 7em;
   margin: 0;
   padding: 0;
+}
+
+.logo {
+  height: 50vh;
 }
