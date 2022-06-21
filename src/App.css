@@ -18,5 +18,13 @@ h1 {
 }
 
 .logo {
-  height: 50vh;
+  height: 150px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
 }

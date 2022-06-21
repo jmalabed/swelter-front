@@ -1,9 +1,9 @@
 import "./App.css";
 import { useEffect } from "react";
 import runOneSignal from "./oneSignalReact";
-import { Route, Routes } from "react-router-dom";
-import Welcome from "./components/Welcome";
-import Subscribe from "./components/Subscribe";
+import Router from "./Router";
+
+import Navigation from "./components/Navigation";
 
 function App() {
   useEffect(() => {
@@ -12,10 +12,8 @@ function App() {
 
   return (
     <div className="App">
-      <Routes>
-        <Route path="" element={<Welcome />} />
-        <Route path="sub" element={<Subscribe />} />
-      </Routes>
+      <Navigation />
+      <Router />
     </div>
   );
 }

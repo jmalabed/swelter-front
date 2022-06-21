@@ -1,9 +1,11 @@
-const img = require("../img/Swelter-logos_transparent.png");
-
 const Welcome = (props) => {
   return (
     <div>
-      <img src={img} alt="buoy" className="logo" />
+      <h1>Welcome</h1>
+      <p>
+        Swelter adds push notifications to buoys! Check our tracked buoys in the
+        navigation bar, and opt in for notifications if you are interested.
+      </p>
     </div>
   );
 };
