@@ -1,24 +1,45 @@
+import { Link, useParams } from "react-router-dom";
+import { useEffect, useMemo, useState } from "react";
 const Buoy = (props) => {
-  const buoy = { props };
-  const sb = {
-    name: "Harvest",
-    location: `34.452 N 120.780 W (34°27'6" N 120°46'47" W)`,
-    link: "https://www.ndbc.noaa.gov/station_page.php?station=46218",
-    desiredDPD: "15",
-    desiredWVHT: "4",
-    desiredMWD: ["S", "SW", "SSW"],
+  const [buoy, setBuoy] = useState(null);
+
+  const id = useParams("id");
+
+  const getBuoy = async (id) => {
+    try {
+      const buoy = await fetch(`http://localhost:9000/buoy/${id}`);
+      const parsedBuoy = await buoy.json();
+      setBuoy(parsedBuoy);
+    } catch (e) {
+      console.log(e);
+    }
   };
+
+  useEffect(() => {
+    getBuoy(id);
+  }, []);
 
   return (
     <div>
-      <h1>Buoy Data</h1>
-      <a href={sb.link}>
-        <p>{sb.name}</p>
-      </a>
-      <p>{sb.location}</p>
-      <p>Desired Wave Period: {sb.desiredDPD}</p>
-      <p>Desired Wave Height: {sb.desiredWVHT}</p>
-      <p>Desired Swell Direction: {sb.desiredMWD.map((a) => a + " ")}</p>
+      <div>
+        <h1>Buoy Data</h1>
+        {buoy !== null && (
+          <>
+            <Link to={buoy._id}>
+              <p>{buoy.name}</p>
+            </Link>
+            <p>Buoy Location: {buoy.location}</p>
+            <p>Desired Wave Period: {buoy.desiredDPD}</p>
+            <p>Desired Wave Height: {buoy.desiredWVHT}</p>
+            <p>
+              Desired Swell Direction: {buoy.desiredMWD?.map((a) => a + " ")}
+            </p>
+          </>
+        )}
+      </div>
+      <Link to="subscribe">
+        <button>Subscribe</button>
+      </Link>
     </div>
   );
 };
