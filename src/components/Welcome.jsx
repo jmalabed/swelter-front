@@ -1,9 +1,14 @@
-const img = require("../img/Swelter-logos_transparent.png");
+import { Link } from "react-router-dom";
 
 const Welcome = (props) => {
   return (
     <div>
-      <img src={img} alt="buoy" className="logo" />
+      <h1>Welcome</h1>
+      <p>
+        Swelter adds push notifications to buoys! Check our{" "}
+        <Link to="buoy">tracked buoys</Link> in the navigation bar, and opt in
+        for notifications if you are interested.
+      </p>
     </div>
   );
 };
