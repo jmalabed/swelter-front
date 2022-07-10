@@ -6,9 +6,9 @@ const Navigation = (props) => {
   const buoys = props.buoys;
 
   const buoyList = buoys.map((buoy, idx) => (
-    <Link to={`buoy/${buoy._id}`} className="list-spacing">
+    <a href={`/buoy/${buoy._id}`} className="list-spacing">
       {buoy.name}
-    </Link>
+    </a>
   ));
 
   return (
