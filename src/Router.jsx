@@ -9,10 +9,10 @@ const Router = (props) => {
   return (
     <Routes>
       <Route path="/" element={<Welcome />} />
-      <Route path="sub" element={<Subscribe />} />
+      <Route path="sub" element={<Sub />} />
       <Route path="buoy" element={<BuoyContainer buoys={props.buoys} />} />
       <Route path="buoy">
-        <Route path="subscribe" element={<Sub />} />
+        <Route path=":id/subscribe" element={<Subscribe />} />
         <Route path=":id" element={<Buoy />} />
       </Route>
     </Routes>
