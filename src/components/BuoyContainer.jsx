@@ -6,7 +6,7 @@ const BuoyContainer = (props) => {
   const { buoys } = props;
 
   const buoyList = buoys.map((buoy, idx) => (
-    <Link to={buoy._id} className="list-spacing">
+    <Link to={buoy._id} className="list-spacing" key={buoy._id}>
       {buoy.name}
     </Link>
   ));
